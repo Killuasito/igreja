@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="space-y-8">
             <h3 className="text-2xl font-bold tracking-wide">
               <span className="bg-gradient-to-r from-[#FF6B00] to-[#FF8533] bg-clip-text text-transparent">
-                cristo Liberta
+                Cristo Liberta
               </span>
             </h3>
             <p className="text-gray-400 leading-relaxed text-sm">

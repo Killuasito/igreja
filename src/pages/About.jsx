@@ -64,21 +64,52 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-8">
-                Nossa <span className="text-[#FF6B00]">História</span>
+                Uma mensagem de <span className="text-[#FF6B00]">Fé</span>
               </h2>
               <div className="space-y-6 text-gray-300">
-                <p>
-                  Fundada em 1990, nossa igreja começou com um pequeno grupo de
-                  fiéis dedicados à palavra de Deus.
-                </p>
-                <p>
-                  Ao longo dos anos, crescemos em número e em força espiritual,
-                  mantendo sempre nosso compromisso com o evangelho.
-                </p>
-                <p>
-                  Hoje, somos uma comunidade vibrante que continua a crescer e
-                  impactar vidas em nossa cidade.
-                </p>
+                "Não fui desobediente à visão celestial" (Atos 26:19)
+                <br />
+                Como faz bem ao meu coração poder fazer a mesma afirmação do
+                apóstolo Paulo São 60 anos de firmeza e de fidelidade na visão,
+                e posso afirmar que eu também não fui desobediente à visão que
+                recebi do Senhor.
+                <br />
+                Quem não lembra a visão da Cristo Liberta que Deus me revelou?
+                <br />
+                Em sonho, vinham as ovelhas comendo a grama verde e bem viçosa
+                em um campo, mas, quando chegavam perto de mim estavam todas com
+                os lábios machucados e cheios de sangue.
+                <br />
+                Quando as vi, gritei com toda a força dos meus pulmões: "Não
+                comam, tem vidros"
+                <br />
+                A Pastora Lourdes estava assustada pelos gritos, pois eu estava
+                sentado na cama e era uma hora da madrugada. Contei a ela o
+                sonho porque sabia que Deus queria me falar algo muito
+                importante, que eu não entendia.
+                <br />
+                Oramos juntos e voltamos a dormir.
+                <br />
+                Em sonho, voltei naquele gramado e là vinham as ovelhas, todas
+                machucadas... Gritei de novo e uma voz me disse: "Tem azeite?
+                Passa nas feridas, tu és um pastor".
+                <br />
+                Tirei o frasco do bolso e passei nas feridas.
+                <br />
+                Elas subiam em mim mostrando as feridas, enquanto eu passava
+                óleo.
+                <br />
+                A voz voltou a falar: "Entendeu o que estás fazendo?
+                <br />
+                Este é o teu ministério: passar azeite nas ovelhas feridas.
+                <br />
+                Há muitas das minhas ovelhas feridas que precisam do teu
+                ministério...
+                <br />
+                "Amar é a minha vida, abençoar é a minha mensagem".
+                <br />
+                <br />
+                (Apóstolo Alfredo Tiezzi)
               </div>
             </div>
           </div>

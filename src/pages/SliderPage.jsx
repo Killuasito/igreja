@@ -3,22 +3,13 @@ import ImageSlider from "../components/ImageSlider";
 const SliderPage = () => {
   const slides = [
     {
-      image:
-        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTfKXA4NpG4KgjhA9V3pmFIYrD7fEdgr05_9AWKD2_zps84JWWJXMB1bCMYmi_lyse027H3dt66t0-Pkd90oRtxwT41x7muXKsH0bWukL0",
-      title: "Culto de Celebração",
-      description: "Domingos às 19h - Venha celebrar conosco",
+      image: "https://i.ibb.co/zVGHctgG/PHOTO-2025-02-21-11-07-26.jpg",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1543465077-db45d34b88a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80",
-      title: "Encontro de Jovens",
-      description: "Sábados às 19h - Um tempo especial de comunhão",
+      image: "https://i.ibb.co/PvLGVX66/PHOTO-2025-02-04-16-53-31.jpg",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80",
-      title: "Escola Dominical",
-      description: "Domingos às 9h - Aprendendo juntos",
+      image: "https://i.ibb.co/k2dT4mhS/PHOTO-2025-02-04-16-53-33.jpg",
     },
   ];
 

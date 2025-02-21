@@ -81,15 +81,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
-                <img
-                  src="https://via.placeholder.com/800x600"
-                  alt="História da Igreja"
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>

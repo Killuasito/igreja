@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // Adicionar import do Link
 import {
   FaFacebookF,
   FaInstagram,
@@ -7,8 +8,11 @@ import {
   FaEnvelope,
   FaChurch,
 } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 const Footer = () => {
+  const { isDark } = useTheme();
+
   const quickLinks = [
     { name: "Início", path: "/" },
     { name: "Sobre", path: "/sobre" },
@@ -18,22 +22,42 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#0A1126] via-[#141E3C] to-[#0A1126] text-white">
+    <footer
+      className={`relative ${
+        isDark
+          ? "bg-[#11182c] text-white border-t border-white/10"
+          : "bg-gradient-to-b from-gray-50 to-white text-gray-800"
+      } transition-colors duration-300`}
+    >
+      {/* Efeito de sobreposição suave */}
+      <div
+        className={`absolute inset-0 ${
+          isDark
+            ? "bg-gradient-to-t from-transparent via-[#11182c]/50 to-transparent"
+            : "bg-gradient-to-t from-transparent via-white/50 to-transparent"
+        }`}
+      ></div>
+
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent opacity-30"></div>
-      <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.02]"></div>
+      <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.05]"></div>
 
       {/* Newsletter Section with Glass Effect */}
       <div className="relative">
         <div className="container mx-auto px-6 py-16">
-          <div className="relative p-8 rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent backdrop-blur-sm border border-white/5">
-            <div className="absolute inset-0 bg-gradient-radial from-[#FF6B00]/5 via-transparent to-transparent"></div>
+          <div
+            className={`relative p-8 rounded-2xl ${
+              isDark
+                ? "bg-[#141E3C] border-white/10"
+                : "bg-white border-gray-100"
+            } shadow-lg border transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1`}
+          >
             <div className="relative max-w-3xl mx-auto text-center">
-              <FaChurch className="w-12 h-12 mx-auto mb-6 text-[#FF6B00] opacity-80" />
-              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <FaChurch className="w-12 h-12 mx-auto mb-6 text-[#FF6B00]" />
+              <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-50">
                 Conecte-se Conosco
               </h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-gray-600 mb-8 dark:text-gray-400">
                 Receba inspirações diárias e mantenha-se atualizado com nossas
                 atividades
               </p>
@@ -41,9 +65,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Seu e-mail"
-                  className="px-6 py-4 bg-white/[0.03] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/50 transition-all duration-300 border border-white/5 hover:border-[#FF6B00]/30 cursor-text"
+                  className="px-6 py-4 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-[#0A1126] rounded-xl dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/50 transition-all duration-300 border border-gray-200"
                 />
-                <button className="px-8 py-4 bg-gradient-to-r from-[#FF6B00] to-[#FF8533] rounded-xl hover:from-[#FF8533] hover:to-[#FF6B00] transition-all duration-500 font-semibold transform hover:translate-y-[-2px] hover:shadow-lg hover:shadow-[#FF6B00]/20 cursor-pointer active:scale-95">
+                <button className="px-8 py-4 bg-gradient-to-r from-[#FF6B00] to-[#FF8533] text-white rounded-xl hover:from-[#FF8533] hover:to-[#FF6B00] transition-all duration-500 font-semibold">
                   Inscrever-se
                 </button>
               </form>
@@ -143,23 +167,31 @@ const Footer = () => {
                   horarios: ["19:30 - 21:00 - Culto de Propósitos"],
                 },
               ].map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`/agenda/${item.dia.toLowerCase()}`}
-                  className="block p-4 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B00]/5"
+                  to={`/agenda/${item.dia.toLowerCase()}`}
+                  className={`block p-4 rounded-lg transition-all duration-300 border transform hover:-translate-y-1 ${
+                    isDark
+                      ? "bg-[#0A1126]/50 hover:bg-[#0A1126] border-white/10"
+                      : "bg-white hover:shadow-lg border-gray-100"
+                  }`}
                 >
-                  <h4 className="text-[#FF6B00] font-medium mb-2">
+                  <h4 className="text-[#FF6B00] font-medium mb-2 transition-transform duration-300 group-hover:scale-105">
                     {item.dia}
                   </h4>
                   {item.horarios.map((horario, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-400 text-sm group-hover:text-white"
+                      className={`text-sm transition-colors duration-300 ${
+                        isDark
+                          ? "text-gray-400 hover:text-gray-300"
+                          : "text-gray-600 hover:text-gray-800"
+                      }`}
                     >
                       {horario}
                     </p>
                   ))}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -187,12 +219,24 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.link}
-                  className="p-4 rounded-xl bg-white/[0.03] hover:bg-gradient-to-br hover:from-[#FF6B00]/20 hover:to-transparent
-                           flex items-center space-x-3 group transition-all duration-300 border border-white/5 hover:border-[#FF6B00]/30
-                           cursor-pointer transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B00]/5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-4 rounded-xl flex items-center space-x-3 group transition-all duration-300 border transform hover:-translate-y-1 ${
+                    isDark
+                      ? "bg-[#0A1126]/50 hover:bg-[#0A1126] border-white/10"
+                      : "bg-white hover:shadow-lg border-gray-100"
+                  }`}
                 >
-                  <social.icon className="w-5 h-5 text-gray-400 group-hover:text-[#FF6B00]" />
-                  <span className="text-sm text-gray-400 group-hover:text-white">
+                  <social.icon
+                    className={`w-5 h-5 transition-colors duration-300 ${
+                      isDark ? "text-gray-400" : "text-gray-600"
+                    } group-hover:text-[#FF6B00] transform group-hover:scale-110`}
+                  />
+                  <span
+                    className={`text-sm transition-all duration-300 ${
+                      isDark ? "text-gray-400" : "text-gray-600"
+                    } group-hover:text-[#FF6B00] group-hover:font-medium`}
+                  >
                     {social.label}
                   </span>
                 </a>
@@ -202,28 +246,24 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar - Updated */}
-        <div className="mt-16 pt-8 border-t border-white/5">
+        <div
+          className={`mt-16 pt-8 border-t ${
+            isDark ? "border-white/10" : "border-gray-200"
+          }`}
+        >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} Igreja. Todos os direitos reservados.
             </p>
-            <div className="flex items-center">
-              {["Privacidade", "Termos", "FAQ"].map((item, index, arr) => (
-                <div key={item} className="flex items-center">
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = `/${item.toLowerCase()}`;
-                    }}
-                    className="text-gray-500 hover:text-[#FF6B00] text-sm transition-all duration-300 hover:scale-105 px-3"
-                  >
-                    {item}
-                  </a>
-                  {index < arr.length - 1 && (
-                    <span className="w-1 h-1 rounded-full bg-gray-700"></span>
-                  )}
-                </div>
+            <div className="flex items-center space-x-2">
+              {["Privacidade", "Termos", "FAQ"].map((item, index) => (
+                <Link
+                  key={item}
+                  to={`/${item.toLowerCase()}`}
+                  className="text-gray-500 hover:text-[#FF6B00] text-sm transition-all duration-300 hover:scale-105 px-3 hover:font-medium"
+                >
+                  {item}
+                </Link>
               ))}
             </div>
           </div>

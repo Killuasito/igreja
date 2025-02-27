@@ -83,40 +83,42 @@ const ImageSlider = ({ images, autoPlayTime = 5000 }) => {
         ))}
       </div>
 
-      {/* Botões de navegação sempre visíveis e maiores */}
+      {/* Botões de navegação */}
       <div className="absolute inset-0 flex items-center justify-between px-4">
         <button
           onClick={goToPrevious}
-          className="w-14 h-14 rounded-full bg-black/30 hover:bg-[#FF6B00] 
+          className="w-14 h-14 rounded-full bg-white/80 hover:bg-[#FF6B00] 
                    flex items-center justify-center transform 
                    transition-all duration-300 hover:scale-110
-                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00]"
+                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00] shadow-lg
+                   hover:text-white"
         >
-          <FaArrowLeft className="w-6 h-6 text-white" />
+          <FaArrowLeft className="w-6 h-6 text-gray-800 group-hover:text-white" />
         </button>
         <button
           onClick={goToNext}
-          className="w-14 h-14 rounded-full bg-black/30 hover:bg-[#FF6B00] 
+          className="w-14 h-14 rounded-full bg-white/80 hover:bg-[#FF6B00] 
                    flex items-center justify-center transform 
                    transition-all duration-300 hover:scale-110
-                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00]"
+                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00] shadow-lg
+                   hover:text-white"
         >
-          <FaArrowRight className="w-6 h-6 text-white" />
+          <FaArrowRight className="w-6 h-6 text-gray-800 group-hover:text-white" />
         </button>
       </div>
 
-      {/* Indicadores maiores e mais interativos */}
+      {/* Indicadores */}
       <div className="absolute bottom-10 left-0 right-0">
         <div className="flex justify-center gap-4">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-3 rounded-full transition-all duration-300 
+              className={`h-3 rounded-full transition-all duration-300 shadow-lg
                 ${
                   index === currentIndex
                     ? "w-12 bg-[#FF6B00]"
-                    : "w-3 bg-white/50 hover:bg-white hover:scale-110"
+                    : "w-3 bg-white hover:bg-gray-200 hover:scale-110"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -124,9 +126,9 @@ const ImageSlider = ({ images, autoPlayTime = 5000 }) => {
         </div>
       </div>
 
-      {/* Contador de slides (opcional) */}
-      <div className="absolute top-4 right-4 bg-black/50 px-4 py-2 rounded-full">
-        <span className="text-white font-medium">
+      {/* Contador de slides */}
+      <div className="absolute top-4 right-4 bg-white/80 text-gray-800 px-4 py-2 rounded-full shadow-lg">
+        <span className="text-gray-800 font-medium">
           {currentIndex + 1} / {images.length}
         </span>
       </div>

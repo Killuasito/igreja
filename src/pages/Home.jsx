@@ -9,8 +9,11 @@ import {
   FaWater,
   FaBook,
 } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 const Home = () => {
+  const { isDark } = useTheme();
+
   const purposes = [
     {
       icon: FaCross,
@@ -74,23 +77,44 @@ const Home = () => {
   ];
 
   return (
-    <div className="w-full bg-[#0A1126] text-white">
-      {/* Background com gradiente suave global */}
-      <div className="fixed inset-0 bg-gradient-to-b from-[#0A1126] via-[#141E3C] to-[#0A1126] opacity-80"></div>
+    <div
+      className={`w-full transition-colors duration-300 ${
+        isDark ? "bg-[#0A1126] text-gray-100" : "bg-white text-gray-800"
+      }`}
+    >
+      {/* Background com gradiente suave */}
+      <div
+        className={`fixed inset-0 ${
+          isDark
+            ? "bg-gradient-to-b from-[#0A1126] via-[#141E3C] to-[#111827] opacity-90"
+            : "bg-gradient-to-b from-gray-50 via-white to-gray-100 opacity-80"
+        }`}
+      ></div>
 
       <div className="relative">
-        {/* Hero Section */}
-        <div className="relative min-h-screen flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.02]"></div>
+        {/* Hero Section com transição suave */}
+        <div
+          className={`relative min-h-screen flex items-center justify-center px-4 ${
+            isDark
+              ? "bg-gradient-to-b from-transparent via-[#0A1126]/50 to-[#111827]"
+              : "bg-transparent"
+          }`}
+        >
+          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.05]"></div>
           <div className="absolute inset-0 bg-gradient-radial from-[#FF6B00]/5 via-transparent to-transparent"></div>
           <div className="relative z-10 text-center max-w-6xl mx-auto">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 text-white leading-tight tracking-tight">
-              Bem-vindo à nossa{" "}
-              <span className="relative inline-block">
-                <span className="text-[#FF6B00]">Igreja</span>
-              </span>
+            <h1
+              className={`text-6xl md:text-8xl font-bold mb-4 leading-tight tracking-tight ${
+                isDark ? "text-white" : "text-gray-800"
+              }`}
+            >
+              Bem-vindo à nossa <span className="text-[#FF6B00]">Igreja</span>
             </h1>
-            <p className="text-gray-400 text-xl mb-12">
+            <p
+              className={`text-xl mb-12 ${
+                isDark ? "text-gray-300" : "text-gray-600"
+              }`}
+            >
               Amar é a marca desse ministério
             </p>
             <button className="bg-gradient-to-r from-[#FF6B00] to-[#ff8534] text-white px-16 py-5 rounded-lg hover:from-[#ff8534] hover:to-[#FF6B00] transition-all duration-300 transform hover:scale-105 shadow-2xl font-medium text-lg uppercase tracking-wider">
@@ -99,15 +123,24 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Purposes Section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#141E3C]/10 to-transparent"></div>
+        {/* Purposes Section com ajuste na transição */}
+        <div
+          className={`relative ${
+            isDark
+              ? "bg-gradient-to-b from-[#111827] via-[#1F2937] to-[#0F172A]"
+              : "bg-gradient-to-b from-gray-50 via-gray-100 to-white"
+          }`}
+        >
           <div className="container mx-auto px-4 py-24">
             <div className="text-center mb-16">
               <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4 block">
                 Nossos Propósitos
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2
+                className={`text-4xl md:text-5xl font-bold ${
+                  isDark ? "text-white" : "text-gray-800"
+                }`}
+              >
                 Chamados para <span className="text-[#FF6B00]">Servir</span>
               </h2>
             </div>
@@ -116,16 +149,22 @@ const Home = () => {
               {purposes.map((purpose, index) => (
                 <div
                   key={index}
-                  className="group p-8 rounded-xl bg-gradient-to-br from-white/[0.03] to-transparent
-                         hover:from-white/[0.05] hover:to-transparent transition-all duration-500
-                         border border-white/5 hover:border-[#FF6B00]/30"
+                  className={`group p-8 rounded-xl transition-all duration-500 ${
+                    isDark
+                      ? "bg-[#1F2937] hover:bg-[#374151] border-gray-700"
+                      : "bg-white hover:shadow-xl border-gray-100"
+                  } border hover:-translate-y-1`}
                 >
                   <div className="flex flex-col items-center text-center">
                     <purpose.icon className="w-12 h-12 text-[#FF6B00] mb-6 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-xl font-bold mb-4 text-white group-hover:text-[#FF6B00] transition-colors duration-300">
+                    <h3
+                      className={`text-xl font-bold mb-4 ${
+                        isDark ? "text-gray-100" : "text-gray-800"
+                      } group-hover:text-[#FF6B00]`}
+                    >
                       {purpose.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className={isDark ? "text-gray-300" : "text-gray-600"}>
                       {purpose.description}
                     </p>
                   </div>
@@ -135,15 +174,24 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Segunda Seção de Propósitos - Ministérios */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#141E3C]/10 to-transparent"></div>
+        {/* Ministries Section com gradiente ajustado */}
+        <div
+          className={`relative ${
+            isDark
+              ? "bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#111827]"
+              : "bg-gradient-to-b from-white via-gray-50 to-gray-100"
+          }`}
+        >
           <div className="container mx-auto px-4 py-24">
             <div className="text-center mb-16">
               <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4 block">
                 Nossos Ministérios
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2
+                className={`text-4xl md:text-5xl font-bold ${
+                  isDark ? "text-white" : "text-gray-800"
+                }`}
+              >
                 Os Cinco <span className="text-[#FF6B00]">Pilares</span>
               </h2>
             </div>
@@ -152,19 +200,31 @@ const Home = () => {
               {ministries.map((ministry, index) => (
                 <div
                   key={index}
-                  className="group p-8 rounded-xl bg-gradient-to-br from-white/[0.03] to-transparent
-                         hover:from-white/[0.05] hover:to-transparent transition-all duration-500
-                         border border-white/5 hover:border-[#FF6B00]/30"
+                  className={`group p-8 rounded-xl transition-all duration-500 ${
+                    isDark
+                      ? "bg-[#1E293B] hover:bg-[#334155] border-gray-700"
+                      : "bg-gray-50 hover:bg-white border-gray-100"
+                  } border hover:-translate-y-1`}
                 >
                   <div className="flex flex-col items-center text-center">
                     <ministry.icon className="w-12 h-12 text-[#FF6B00] mb-6 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF6B00] transition-colors duration-300">
+                    <h3
+                      className={`text-xl font-bold mb-4 transition-colors duration-300 ${
+                        isDark
+                          ? "text-white group-hover:text-[#FF6B00]"
+                          : "text-gray-800 group-hover:text-[#FF6B00]"
+                      }`}
+                    >
                       {ministry.title}
                     </h3>
                     <span className="text-sm text-[#FF6B00] font-medium mb-3">
                       {ministry.highlight}
                     </span>
-                    <p className="text-gray-400 leading-relaxed text-sm">
+                    <p
+                      className={`text-sm leading-relaxed ${
+                        isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
                       {ministry.description}
                     </p>
                   </div>
@@ -174,16 +234,25 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Service Times Section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A1126]/20 to-transparent"></div>
+        {/* Service Times Section harmonizado com o Footer */}
+        <div
+          className={`relative ${
+            isDark
+              ? "bg-gradient-to-b from-[#111827] to-[#11182c]"
+              : "bg-gradient-to-b from-gray-100 to-gray-50"
+          }`}
+        >
           <div className="container mx-auto px-4 py-24">
             <div className="flex flex-col items-center mb-16">
               <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent mb-16 opacity-50"></div>
               <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4">
                 Nossos Horários
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+              <h2
+                className={`text-4xl md:text-5xl font-bold text-center ${
+                  isDark ? "text-white" : "text-gray-800"
+                }`}
+              >
                 Horários dos <span className="text-[#FF6B00]">Cultos</span>
               </h2>
             </div>
@@ -207,7 +276,11 @@ const Home = () => {
               ].map((service, index) => (
                 <div
                   key={index}
-                  className="text-center p-10 bg-gradient-to-br from-[#131B36]/90 to-[#1C2645]/90 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/5 hover:border-[#FF6B00]/30 group"
+                  className={`text-center p-10 rounded-xl transition-all duration-500 group hover:-translate-y-1 ${
+                    isDark
+                      ? "bg-[#1F2937] hover:bg-[#374151] border-gray-700"
+                      : "bg-white border-gray-100 hover:shadow-xl"
+                  } border`}
                 >
                   <div className="relative">
                     <h3 className="text-2xl font-bold mb-6 text-[#FF6B00] group-hover:scale-110 transition-transform duration-300">
@@ -216,12 +289,15 @@ const Home = () => {
                     {service.times.map((time, idx) => (
                       <p
                         key={idx}
-                        className="text-gray-400 text-lg mb-3 transition-colors duration-300 hover:text-white relative z-10"
+                        className={`text-lg mb-3 transition-colors duration-300 ${
+                          isDark
+                            ? "text-gray-300 hover:text-gray-100"
+                            : "text-gray-600 hover:text-gray-800"
+                        }`}
                       >
                         {time}
                       </p>
                     ))}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#FF6B00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                   </div>
                 </div>
               ))}

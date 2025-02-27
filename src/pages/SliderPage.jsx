@@ -14,15 +14,14 @@ const SliderPage = () => {
   ];
 
   return (
-    <div className="pt-20 bg-[#0A1126]">
+    <div className="pt-20 bg-white">
       <ImageSlider images={slides} autoPlayTime={5000} />
 
-      {/* Seção de Conteúdo Opcional */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center text-white mb-8">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Nossa <span className="text-[#FF6B00]">Galeria</span>
         </h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto">
+        <p className="text-gray-600 text-center max-w-2xl mx-auto">
           Explore nossos momentos especiais e faça parte desta história.
         </p>
       </div>

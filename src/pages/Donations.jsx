@@ -22,7 +22,7 @@ const Donations = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="text-[#FF6B00]">Doações</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Sua contribuição nos ajuda a continuar nosso trabalho e impactar
             mais vidas.
           </p>
@@ -39,26 +39,28 @@ const Donations = () => {
           ].map((method, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300"
+              className="bg-white dark:bg-[#13213d] dark:border-[#18294e] p-8 rounded-xl shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300"
             >
               <method.icon className="w-12 h-12 text-[#FF6B00] mb-6" />
-              <h3 className="text-xl font-bold mb-4 text-gray-800">
+              <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
                 {method.title}
               </h3>
-              <p className="text-gray-600 whitespace-pre-line">{method.info}</p>
+              <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                {method.info}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Seção de Impacto */}
-        <div className="bg-white rounded-xl p-8 md:p-12 shadow-lg border border-gray-100">
+        <div className="bg-white dark:bg-[#13213d] rounded-xl p-8 md:p-12 shadow-lg border border-gray-100 dark:border-[#18294e]">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-gray-800">
+              <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
                 Seu Impacto na{" "}
                 <span className="text-[#FF6B00]">Comunidade</span>
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-8 dark:text-gray-300">
                 Suas doações nos ajudam a manter nossos projetos sociais e
                 alcançar mais pessoas com a mensagem de Cristo.
               </p>
@@ -71,7 +73,9 @@ const Donations = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <FaHandHoldingHeart className="text-[#FF6B00]" />
-                    <span className="text-gray-600">{item}</span>
+                    <span className="text-gray-600 dark:text-gray-200">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>

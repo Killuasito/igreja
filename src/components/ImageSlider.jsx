@@ -34,30 +34,24 @@ const ImageSlider = ({ images, autoPlayTime = 5000 }) => {
   };
 
   return (
-    <div className="relative w-full h-[600px] md:h-[800px] overflow-hidden group">
+    <div className="relative w-full max-w-7xl mx-auto h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden rounded-2xl">
       {/* Slides Container */}
       <div className="relative h-full w-full">
         {images.map((slide, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in-out
-              ${
-                index === currentIndex
-                  ? "opacity-100 scale-100"
-                  : "opacity-0 scale-110"
-              }`}
+            className={`absolute inset-0 transition-opacity duration-500 ease-in-out
+              ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
           >
             <img
               src={slide.image}
               alt={slide.title || `Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
-
-            {/* Overlay mais suave */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50"></div>
 
             {/* Conteúdo do Slide */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center px-4">
               <div className="text-center max-w-4xl mx-auto px-4 space-y-6">
                 {slide.title && (
                   <h2
@@ -83,42 +77,40 @@ const ImageSlider = ({ images, autoPlayTime = 5000 }) => {
         ))}
       </div>
 
-      {/* Botões de navegação */}
-      <div className="absolute inset-0 flex items-center justify-between px-4">
-        <button
-          onClick={goToPrevious}
-          className="w-14 h-14 rounded-full bg-white/80 hover:bg-[#FF6B00] 
-                   flex items-center justify-center transform 
-                   transition-all duration-300 hover:scale-110
-                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00] shadow-lg
-                   hover:text-white"
-        >
-          <FaArrowLeft className="w-6 h-6 text-gray-800 group-hover:text-white" />
-        </button>
-        <button
-          onClick={goToNext}
-          className="w-14 h-14 rounded-full bg-white/80 hover:bg-[#FF6B00] 
-                   flex items-center justify-center transform 
-                   transition-all duration-300 hover:scale-110
-                   focus:outline-none focus:ring-2 focus:ring-[#FF6B00] shadow-lg
-                   hover:text-white"
-        >
-          <FaArrowRight className="w-6 h-6 text-gray-800 group-hover:text-white" />
-        </button>
+      {/* Botões de navegação reposicionados */}
+      <div className="absolute inset-y-0 left-0 right-0 pointer-events-none">
+        <div className="container mx-auto h-full px-4 flex items-center justify-between">
+          <button
+            onClick={goToPrevious}
+            className="pointer-events-auto w-12 h-12 rounded-full bg-black/30 backdrop-blur-sm
+                     flex items-center justify-center -ml-2
+                     hover:bg-[#FF6B00]/80 transition-colors duration-300"
+          >
+            <FaArrowLeft className="w-5 h-5 text-white" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="pointer-events-auto w-12 h-12 rounded-full bg-black/30 backdrop-blur-sm
+                     flex items-center justify-center -mr-2
+                     hover:bg-[#FF6B00]/80 transition-colors duration-300"
+          >
+            <FaArrowRight className="w-5 h-5 text-white" />
+          </button>
+        </div>
       </div>
 
-      {/* Indicadores */}
-      <div className="absolute bottom-10 left-0 right-0">
-        <div className="flex justify-center gap-4">
+      {/* Indicadores simplificados */}
+      <div className="absolute bottom-4 sm:bottom-10 left-0 right-0">
+        <div className="flex justify-center gap-2">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-3 rounded-full transition-all duration-300 shadow-lg
+              className={`h-2 rounded-full transition-all duration-300
                 ${
                   index === currentIndex
-                    ? "w-12 bg-[#FF6B00]"
-                    : "w-3 bg-white hover:bg-gray-200 hover:scale-110"
+                    ? "w-8 bg-[#FF6B00]"
+                    : "w-2 bg-white/70"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -126,9 +118,9 @@ const ImageSlider = ({ images, autoPlayTime = 5000 }) => {
         </div>
       </div>
 
-      {/* Contador de slides */}
-      <div className="absolute top-4 right-4 bg-white/80 text-gray-800 px-4 py-2 rounded-full shadow-lg">
-        <span className="text-gray-800 font-medium">
+      {/* Contador simplificado */}
+      <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm text-white px-3 py-1 rounded-full">
+        <span className="text-sm">
           {currentIndex + 1} / {images.length}
         </span>
       </div>

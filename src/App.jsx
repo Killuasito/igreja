@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Events from ".pages/Events";
 import Donations from "./pages/Donations";
 import SliderPage from "./pages/SliderPage";
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,6 +21,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sobre" element={<About />} />
+              <Route path="/eventos" element={<Events />} />
               <Route path="/slider" element={<SliderPage />} />
               <Route path="/doacoes" element={<Donations />} />
               <Route

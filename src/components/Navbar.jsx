@@ -32,6 +32,7 @@ const Navbar = () => {
     { name: "Sobre", path: "/sobre" },
     { name: "Imagens", path: "/slider" },
     { name: "Doações", path: "/doacoes" },
+    { name: "Eventos", path: "/eventos" },
   ];
 
   // Função para verificar rota ativa

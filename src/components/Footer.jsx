@@ -129,41 +129,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links - Updated Section */}
-          <div className="space-y-8">
-            <h3 className="text-4xl font-bold">
-              <span
-                className="bg-gradient-to-r from-[#FF6B00] via-[#ff8534] to-[#FF6B00] 
-                           text-transparent bg-clip-text tracking-wide"
-              >
-                Links Rápidos
-              </span>
-            </h3>
-            <ul className="space-y-4">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className={`group flex items-center p-3 rounded-lg hover:bg-[#FF6B00]/10
-                    transition-all duration-300`}
-                  >
-                    <span
-                      className="w-2 h-2 rounded-full bg-[#FF6B00] mr-3 
-                                   group-hover:w-3 transition-all duration-300"
-                    ></span>
-                    <span
-                      className={`text-lg font-medium ${
-                        isDark ? "text-gray-100" : "text-gray-700"
-                      } group-hover:text-[#FF6B00]`}
-                    >
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Service Times */}
           <div className="space-y-8">
             <h3 className="text-4xl font-bold">

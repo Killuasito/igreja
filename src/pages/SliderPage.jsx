@@ -2,7 +2,10 @@ import { useState } from "react";
 import ImageSlider from "../components/ImageSlider";
 import { useTheme } from "../context/ThemeContext";
 import { FaSearch, FaTimes } from "react-icons/fa";
+<<<<<<< HEAD
 import { motion, AnimatePresence } from "framer-motion";
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
 const SliderPage = () => {
   const { isDark } = useTheme();
@@ -56,6 +59,7 @@ const SliderPage = () => {
       <div className="pt-28">
         <div className="px-4 lg:px-8 xl:px-0">
           {/* Slider Section */}
+<<<<<<< HEAD
           <motion.div 
             className="bg-transparent"
             initial={{ opacity: 0 }}
@@ -96,6 +100,28 @@ const SliderPage = () => {
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ delay: index * 0.05, duration: 0.5 }}
                   whileHover={{ y: -8, transition: { duration: 0.2 } }}
+=======
+          <div className="bg-transparent">
+            <ImageSlider images={images} />
+          </div>
+
+          {/* Gallery Section com tamanhos ajustados */}
+          <div className="container mx-auto px-4 py-20">
+            <h2
+              className={`text-4xl font-bold text-center mb-16 ${
+                isDark ? "text-white" : "text-gray-800"
+              }`}
+            >
+              Nossa <span className="text-[#FF6B00]">Galeria</span>
+            </h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  onClick={() => setSelectedImage(image)}
+                  className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1"
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                 >
                   <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
                     <img
@@ -116,13 +142,20 @@ const SliderPage = () => {
                       {image.title}
                     </h3>
                   </div>
+<<<<<<< HEAD
                 </motion.div>
               ))}
             </motion.div>
+=======
+                </div>
+              ))}
+            </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Modal with AnimatePresence for smooth entry/exit */}
       <AnimatePresence>
         {selectedImage && (
@@ -165,6 +198,45 @@ const SliderPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
+=======
+      {/* Modal ajustado para melhor visualização */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 backdrop-blur-sm p-4 md:p-8"
+          onClick={handleCloseModal}
+          style={{
+            animation: isClosing
+              ? "fadeOut 300ms ease-out forwards"
+              : "fadeIn 300ms ease-out forwards",
+          }}
+        >
+          <div
+            className="relative max-w-5xl mx-auto mt-10 md:mt-20"
+            style={{
+              animation: isClosing
+                ? "slideDown 300ms ease-out forwards"
+                : "slideUp 500ms ease-out forwards",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={handleCloseModal}
+              className="absolute -top-12 right-4 text-white/80 hover:text-white transition-colors duration-300"
+            >
+              <FaTimes className="w-8 h-8" />
+            </button>
+            <img
+              src={selectedImage.url}
+              alt={selectedImage.title}
+              className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
+            />
+            <p className="text-white text-center mt-6 text-xl font-medium">
+              {selectedImage.title}
+            </p>
+          </div>
+        </div>
+      )}
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
       {/* Animações CSS atualizadas */}
       <style jsx>{`

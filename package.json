@@ -12,8 +12,11 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.0.7",
+<<<<<<< HEAD
     "axios": "^1.8.1",
     "framer-motion": "^12.4.7",
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
@@ -30,6 +33,10 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+<<<<<<< HEAD
     "vite": "^6.2.0"
+=======
+    "vite": "^6.1.0"
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
   }
 }

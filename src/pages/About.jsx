@@ -1,6 +1,9 @@
 import { FaChurch, FaHeart, FaPray, FaUsers } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
 const About = () => {
   const { isDark } = useTheme();
@@ -38,12 +41,16 @@ const About = () => {
       {/* Hero Section */}
       <div className="relative py-20 px-4">
         <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.05]"></div>
+<<<<<<< HEAD
         <motion.div 
           className="max-w-7xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+=======
+        <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           <h1
             className={`text-5xl md:text-6xl font-bold mb-6 ${
               isDark ? "text-white" : "text-gray-800"
@@ -51,6 +58,7 @@ const About = () => {
           >
             Sobre Nossa <span className="text-[#FF6B00]">Igreja</span>
           </h1>
+<<<<<<< HEAD
           <motion.p
             className={`text-xl max-w-3xl mx-auto leading-relaxed ${
               isDark ? "text-gray-300" : "text-gray-600"
@@ -63,6 +71,17 @@ const About = () => {
             transformar vidas através da palavra de Deus.
           </motion.p>
         </motion.div>
+=======
+          <p
+            className={`text-xl max-w-3xl mx-auto leading-relaxed ${
+              isDark ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Uma comunidade dedicada a compartilhar o amor de Cristo e
+            transformar vidas através da palavra de Deus.
+          </p>
+        </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
       </div>
 
       {/* Valores */}
@@ -70,18 +89,25 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((item, index) => (
+<<<<<<< HEAD
               <motion.div
+=======
+              <div
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                 key={index}
                 className={`p-8 rounded-xl transition-all duration-300 group ${
                   isDark
                     ? "bg-[#141E3C] hover:bg-[#0A1126] border-white/10"
                     : "bg-white hover:shadow-xl border-gray-100"
                 } border`}
+<<<<<<< HEAD
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -10, transition: { duration: 0.2 } }}
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               >
                 <item.icon className="w-12 h-12 text-[#FF6B00] mb-6 group-hover:scale-110 transition-transform duration-300" />
                 <h3
@@ -94,7 +120,11 @@ const About = () => {
                 <p className={isDark ? "text-gray-400" : "text-gray-600"}>
                   {item.desc}
                 </p>
+<<<<<<< HEAD
               </motion.div>
+=======
+              </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
             ))}
           </div>
         </div>
@@ -108,12 +138,16 @@ const About = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
+<<<<<<< HEAD
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+=======
+            <div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               <h2
                 className={`text-4xl font-bold mb-8 ${
                   isDark ? "text-white" : "text-gray-800"
@@ -121,6 +155,7 @@ const About = () => {
               >
                 Uma mensagem de <span className="text-[#FF6B00]">Fé</span>
               </h2>
+<<<<<<< HEAD
               <motion.div
                 className={`space-y-6 ${
                   isDark ? "text-gray-300" : "text-gray-600"
@@ -129,6 +164,12 @@ const About = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
+=======
+              <div
+                className={`space-y-6 ${
+                  isDark ? "text-gray-300" : "text-gray-600"
+                }`}
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               >
                 "Não fui desobediente à visão celestial" (Atos 26:19)
                 <br />
@@ -173,8 +214,13 @@ const About = () => {
                 <br />
                 <br />
                 (Apóstolo Alfredo Tiezzi)
+<<<<<<< HEAD
               </motion.div>
             </motion.div>
+=======
+              </div>
+            </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 
@@ -87,6 +88,13 @@ const Events = () => {
           </motion.div>
         </div>
       </div>
+=======
+const Events = () => {
+  return (
+    <div>
+      <h1>Eventos</h1>
+      <p>Bem-vindo à página de eventos!</p>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
     </div>
   );
 };

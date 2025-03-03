@@ -10,7 +10,10 @@ import {
   FaBook,
 } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
 const Home = () => {
   const { isDark } = useTheme();
@@ -103,12 +106,16 @@ const Home = () => {
         >
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-[0.05]"></div>
           <div className="absolute inset-0 bg-gradient-radial from-[#FF6B00]/5 via-transparent to-transparent"></div>
+<<<<<<< HEAD
           <motion.div 
             className="relative z-10 text-center max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+=======
+          <div className="relative z-10 text-center max-w-6xl mx-auto">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
             <h1
               className={`text-6xl md:text-8xl font-bold mb-4 leading-tight tracking-tight ${
                 isDark ? "text-white" : "text-gray-800"
@@ -116,6 +123,7 @@ const Home = () => {
             >
               Bem-vindo à nossa <span className="text-[#FF6B00]">Igreja</span>
             </h1>
+<<<<<<< HEAD
             <motion.p
               className={`text-xl mb-12 ${
                 isDark ? "text-gray-300" : "text-gray-600"
@@ -137,6 +145,19 @@ const Home = () => {
               Participe de um Culto
             </motion.button>
           </motion.div>
+=======
+            <p
+              className={`text-xl mb-12 ${
+                isDark ? "text-gray-300" : "text-gray-600"
+              }`}
+            >
+              Amar é a marca desse ministério
+            </p>
+            <button className="bg-gradient-to-r from-[#FF6B00] to-[#ff8534] text-white px-16 py-5 rounded-lg hover:from-[#ff8534] hover:to-[#FF6B00] transition-all duration-300 transform hover:scale-105 shadow-2xl font-medium text-lg uppercase tracking-wider">
+              Participe de um Culto
+            </button>
+          </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
         </div>
 
         {/* Purposes Section com ajuste na transição */}
@@ -148,6 +169,7 @@ const Home = () => {
           }`}
         >
           <div className="container mx-auto px-4 py-24">
+<<<<<<< HEAD
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -155,6 +177,9 @@ const Home = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
             >
+=======
+            <div className="text-center mb-16">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4 block">
                 Nossos Propósitos
               </span>
@@ -165,22 +190,33 @@ const Home = () => {
               >
                 Chamados para <span className="text-[#FF6B00]">Servir</span>
               </h2>
+<<<<<<< HEAD
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {purposes.map((purpose, index) => (
                 <motion.div
+=======
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {purposes.map((purpose, index) => (
+                <div
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                   key={index}
                   className={`group p-8 rounded-xl transition-all duration-500 ${
                     isDark
                       ? "bg-[#1F2937] hover:bg-[#374151] border-gray-700"
                       : "bg-white hover:shadow-xl border-gray-100"
                   } border hover:-translate-y-1`}
+<<<<<<< HEAD
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   whileHover={{ y: -10, transition: { duration: 0.2 } }}
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                 >
                   <div className="flex flex-col items-center text-center">
                     <purpose.icon className="w-12 h-12 text-[#FF6B00] mb-6 group-hover:scale-110 transition-transform duration-300" />
@@ -195,7 +231,11 @@ const Home = () => {
                       {purpose.description}
                     </p>
                   </div>
+<<<<<<< HEAD
                 </motion.div>
+=======
+                </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               ))}
             </div>
           </div>
@@ -210,6 +250,7 @@ const Home = () => {
           }`}
         >
           <div className="container mx-auto px-4 py-24">
+<<<<<<< HEAD
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -217,6 +258,9 @@ const Home = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
             >
+=======
+            <div className="text-center mb-16">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4 block">
                 Nossos Ministérios
               </span>
@@ -227,22 +271,33 @@ const Home = () => {
               >
                 Os Cinco <span className="text-[#FF6B00]">Pilares</span>
               </h2>
+<<<<<<< HEAD
             </motion.div>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
               {ministries.map((ministry, index) => (
                 <motion.div
+=======
+            </div>
+
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {ministries.map((ministry, index) => (
+                <div
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                   key={index}
                   className={`group p-8 rounded-xl transition-all duration-500 ${
                     isDark
                       ? "bg-[#1E293B] hover:bg-[#334155] border-gray-700"
                       : "bg-gray-50 hover:bg-white border-gray-100"
                   } border hover:-translate-y-1`}
+<<<<<<< HEAD
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   whileHover={{ y: -10, transition: { duration: 0.2 } }}
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                 >
                   <div className="flex flex-col items-center text-center">
                     <ministry.icon className="w-12 h-12 text-[#FF6B00] mb-6 group-hover:scale-110 transition-transform duration-300" />
@@ -266,7 +321,11 @@ const Home = () => {
                       {ministry.description}
                     </p>
                   </div>
+<<<<<<< HEAD
                 </motion.div>
+=======
+                </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               ))}
             </div>
           </div>
@@ -282,6 +341,7 @@ const Home = () => {
         >
           <div className="container mx-auto px-4 py-24">
             <div className="flex flex-col items-center mb-16">
+<<<<<<< HEAD
               <motion.div 
                 className="w-20 h-1 bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent mb-16 opacity-50"
                 initial={{ width: 0 }}
@@ -309,6 +369,19 @@ const Home = () => {
               >
                 Horários dos <span className="text-[#FF6B00]">Cultos</span>
               </motion.h2>
+=======
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent mb-16 opacity-50"></div>
+              <span className="text-[#FF6B00] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                Nossos Horários
+              </span>
+              <h2
+                className={`text-4xl md:text-5xl font-bold text-center ${
+                  isDark ? "text-white" : "text-gray-800"
+                }`}
+              >
+                Horários dos <span className="text-[#FF6B00]">Cultos</span>
+              </h2>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
             </div>
             <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
               {[
@@ -328,18 +401,25 @@ const Home = () => {
                   times: ["19:30 - 21:00 - Culto de Propósitos"],
                 },
               ].map((service, index) => (
+<<<<<<< HEAD
                 <motion.div
+=======
+                <div
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                   key={index}
                   className={`text-center p-10 rounded-xl transition-all duration-500 group hover:-translate-y-1 ${
                     isDark
                       ? "bg-[#1F2937] hover:bg-[#374151] border-gray-700"
                       : "bg-white border-gray-100 hover:shadow-xl"
                   } border`}
+<<<<<<< HEAD
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
                   whileHover={{ y: -10 }}
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
                 >
                   <div className="relative">
                     <h3 className="text-2xl font-bold mb-6 text-[#FF6B00] group-hover:scale-110 transition-transform duration-300">
@@ -358,7 +438,11 @@ const Home = () => {
                       </p>
                     ))}
                   </div>
+<<<<<<< HEAD
                 </motion.div>
+=======
+                </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
               ))}
             </div>
           </div>

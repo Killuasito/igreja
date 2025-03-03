@@ -5,7 +5,10 @@ import {
   FaQrcode,
 } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
 const Donations = () => {
   const { isDark } = useTheme();
@@ -19,12 +22,16 @@ const Donations = () => {
       } transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 py-20">
+<<<<<<< HEAD
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+=======
+        <div className="text-center mb-16">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="text-[#FF6B00]">Doações</span>
           </h1>
@@ -32,7 +39,11 @@ const Donations = () => {
             Sua contribuição nos ajuda a continuar nosso trabalho e impactar
             mais vidas.
           </p>
+<<<<<<< HEAD
         </motion.div>
+=======
+        </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
         {/* Métodos de Doação */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -43,12 +54,18 @@ const Donations = () => {
               info: "Chave PIX: cristoliberta@oul.com.br",
             },
           ].map((method, index) => (
+<<<<<<< HEAD
             <motion.div
               key={index}
               className="bg-white dark:bg-[#13213d] dark:border-[#18294e] p-8 rounded-xl shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
+=======
+            <div
+              key={index}
+              className="bg-white dark:bg-[#13213d] dark:border-[#18294e] p-8 rounded-xl shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-300"
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
             >
               <method.icon className="w-12 h-12 text-[#FF6B00] mb-6" />
               <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
@@ -57,17 +74,25 @@ const Donations = () => {
               <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
                 {method.info}
               </p>
+<<<<<<< HEAD
             </motion.div>
+=======
+            </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           ))}
         </div>
 
         {/* Seção de Impacto */}
+<<<<<<< HEAD
         <motion.div 
           className="bg-white dark:bg-[#13213d] rounded-xl p-8 md:p-12 shadow-lg border border-gray-100 dark:border-[#18294e]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+=======
+        <div className="bg-white dark:bg-[#13213d] rounded-xl p-8 md:p-12 shadow-lg border border-gray-100 dark:border-[#18294e]">
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
@@ -95,7 +120,11 @@ const Donations = () => {
               </div>
             </div>
           </div>
+<<<<<<< HEAD
         </motion.div>
+=======
+        </div>
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
       </div>
     </div>
   );

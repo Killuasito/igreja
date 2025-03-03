@@ -8,8 +8,11 @@ import SliderPage from "./pages/SliderPage";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
 import { ThemeProvider } from "./context/ThemeContext";
+<<<<<<< HEAD
 import Events from "./pages/Events";
 import Bible from "./pages/Bible"; // Import Bible page
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
 
 const App = () => {
   return (
@@ -28,8 +31,11 @@ const App = () => {
                 path="/ministerios"
                 element={<div className="pt-20">Ministérios</div>}
               />
+<<<<<<< HEAD
               <Route path="/events" element={<Events />} />
               <Route path="/biblia" element={<Bible />} /> {/* Added Bible route */}
+=======
+>>>>>>> 5f952303f877eb762dfb26a151c964a409e3be39
             </Routes>
           </main>
           <Footer />
